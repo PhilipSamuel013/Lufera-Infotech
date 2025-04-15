@@ -3,6 +3,43 @@
 <html lang="en" data-theme="light">
 
 <?php include './partials/head.php' ?>
+<?php
+session_start();
+
+$conn = new mysqli("localhost", "root", "", "lufera infotech");
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prevent SQL injection
+    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($user_id, $db_password);
+        $stmt->fetch();
+
+        if ($password === $db_password) {
+            $_SESSION['user_id'] = $user_id;
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "Incorrect password!";
+        }
+    } else {
+        $error = "Email not found!";
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
+
 
 <body>
 
@@ -21,19 +58,19 @@
                     <h4 class="mb-12">Sign In to your Account</h4>
                     <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
                 </div>
-                <form action="#">
+                <form method="post">
                     <div class="icon-field mb-16">
                         <span class="icon top-50 translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email">
+                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email" name="email">
                     </div>
                     <div class="position-relative mb-20">
                         <div class="icon-field">
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Password">
+                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Password" name="password">
                         </div>
                         <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
                     </div>
@@ -47,9 +84,11 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"> Sign In</button>
-
-                    <div class="mt-32 center-border-horizontal text-center">
+                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32" name="login"> Sign In</button>
+                    <?php if (!empty($error)) : ?>
+                        <div class="error text-danger"><?= $error ?></div>
+                    <?php endif; ?> 
+                    <!-- <div class="mt-32 center-border-horizontal text-center">
                         <span class="bg-base z-1 px-4">Or sign in with</span>
                     </div>
                     <div class="mt-32 d-flex align-items-center gap-3">
@@ -64,31 +103,13 @@
                     </div>
                     <div class="mt-32 text-center text-sm">
                         <p class="mb-0">Don’t have an account? <a href="sign-up.php" class="text-primary-600 fw-semibold">Sign Up</a></p>
-                    </div>
+                    </div> -->
 
                 </form>
             </div>
         </div>
     </section>
 
-    <?php $script = '<script>
-                        // ================== Password Show Hide Js Start ==========
-                        function initializePasswordToggle(toggleSelector) {
-                            $(toggleSelector).on("click", function() {
-                                $(this).toggleClass("ri-eye-off-line");
-                                var input = $($(this).attr("data-toggle"));
-                                if (input.attr("type") === "password") {
-                                    input.attr("type", "text");
-                                } else {
-                                    input.attr("type", "password");
-                                }
-                            });
-                        }
-                        // Call the function
-                        initializePasswordToggle(".toggle-password");
-                        // ========================= Password Show Hide Js End ===========================
-                    </script>';?>
-                    
 <?php include './partials/scripts.php' ?>
 
 </body>
