@@ -12161,7 +12161,8 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
 
 .icon-field .icon {
   position: absolute;
-  top: 12px;
+  /* top: 12px; */
+  top: 27px;
   inset-inline-start: 0;
   width: 40px;
   display: flex;
