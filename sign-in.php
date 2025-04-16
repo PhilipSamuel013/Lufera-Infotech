@@ -1,80 +1,61 @@
 <!-- meta tags and other links -->
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
-<?php include './partials/head.php' ?>
-<?php
-session_start();
-
-$conn = new mysqli("localhost", "root", "", "lufera infotech");
-
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Prevent SQL injection
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($user_id, $db_password);
-        $stmt->fetch();
-
-        if ($password === $db_password) {
-            $_SESSION['user_id'] = $user_id;
-            header("Location: index.php");
-            exit();
-        } else {
-            $error = "Incorrect password!";
-        }
-    } else {
-        $error = "Email not found!";
+<style>
+    .border-danger {
+        border: 1px solid red !important;
     }
-
-    $stmt->close();
-}
-
-$conn->close();
-?>
-
-
+    .toggle-password{
+        inset-inline-start: auto !important;
+    }
+    .sign-in-img{
+        height: -webkit-fill-available;
+        object-fit: cover;
+    }
+</style>
+<?php include './partials/head.php' ?>
 <body>
 
     <section class="auth bg-base d-flex flex-wrap">
         <div class="auth-left d-lg-block d-none">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center">
-                <img src="assets/images/auth/auth-img.png" alt="">
+                <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img">
             </div>
         </div>
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">
             <div class="max-w-464-px mx-auto w-100">
                 <div>
                     <a href="index.php" class="mb-40 max-w-290-px">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="assets/images/logo_lufera.png" alt="">
                     </a>
-                    <h4 class="mb-12">Sign In to your Account</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
+                    <h4 class="mb-12">Sign In</h4>
+                    <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your detail</p>
                 </div>
-                <form method="post">
+                <form id="login-form">
                     <div class="icon-field mb-16">
-                        <span class="icon top-50 translate-middle-y">
+                        <span class="icon translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email" name="email">
+                        <input id="email" type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email" name="email">
+                        <div id="email-error" class="error text-danger mt-1"></div>
+
                     </div>
-                    <div class="position-relative mb-20">
+                    <div class="position-relative">
                         <div class="icon-field">
-                            <span class="icon top-50 translate-middle-y">
+                            <span class="icon translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Password" name="password">
+
+                            <input id="password" type="password" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Password" name="password">
+                            <div id="password-error" class="error text-danger mt-1"></div>
+                            <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 translate-middle-y me-16 text-secondary-light icon" data-toggle="#password"></span>
                         </div>
-                        <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
+                        
                     </div>
-                    <div class="">
+                    <?php if (!empty($error_pass)) : ?>
+                         <div class="error text-danger"><?= $error_pass ?></div>
+                     <?php endif; ?> 
+                    <div class="mt-20">
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-center">
                                 <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remeber">
@@ -85,9 +66,7 @@ $conn->close();
                     </div>
 
                     <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32" name="login"> Sign In</button>
-                    <?php if (!empty($error)) : ?>
-                        <div class="error text-danger"><?= $error ?></div>
-                    <?php endif; ?> 
+                    
                     <!-- <div class="mt-32 center-border-horizontal text-center">
                         <span class="bg-base z-1 px-4">Or sign in with</span>
                     </div>
@@ -100,18 +79,76 @@ $conn->close();
                             <iconify-icon icon="logos:google-icon" class="text-primary-600 text-xl line-height-1"></iconify-icon>
                             Google
                         </button>
-                    </div>
+                    </div> -->
                     <div class="mt-32 text-center text-sm">
                         <p class="mb-0">Don’t have an account? <a href="sign-up.php" class="text-primary-600 fw-semibold">Sign Up</a></p>
-                    </div> -->
+                    </div>
 
                 </form>
+                <div id="login-error" class="error text-danger mt-3"></div>
+
             </div>
         </div>
     </section>
-
+    <?php $script = '<script>
+                         // ================== Password Show Hide Js Start ==========
+                         function initializePasswordToggle(toggleSelector) {
+                             $(toggleSelector).on("click", function() {
+                                 $(this).toggleClass("ri-eye-off-line");
+                                 var input = $($(this).attr("data-toggle"));
+                                 if (input.attr("type") === "password") {
+                                     input.attr("type", "text");
+                                 } else {
+                                     input.attr("type", "password");
+                                 }
+                             });
+                         }
+                         // Call the function
+                         initializePasswordToggle(".toggle-password");
+                         // ========================= Password Show Hide Js End ===========================
+                     </script>';?>
 <?php include './partials/scripts.php' ?>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Clear previous errors
+        ["email", "password"].forEach(field => {
+            document.getElementById(`${field}-error`).innerText = '';
+            document.getElementById(field).classList.remove("border-danger");
+        });
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch("login-process.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = "index.php";
+            } else {
+                const errors = data.errors || {};
+
+                if (errors.email) {
+                    document.getElementById("email-error").innerText = errors.email;
+                    document.getElementById("email").classList.add("border-danger");
+                }
+
+                if (errors.password) {
+                    document.getElementById("password-error").innerText = errors.password;
+                    document.getElementById("password").classList.add("border-danger");
+                }
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
 
 </body>
 
 </html>
+

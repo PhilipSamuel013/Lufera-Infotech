@@ -1,0 +1,38 @@
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "lufera infotech");
+
+$response = [
+    'success' => false,
+    'errors' => []
+];
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($user_id, $db_password);
+        $stmt->fetch();
+
+        if ($password === $db_password) {
+            $_SESSION['user_id'] = $user_id;
+            $response['success'] = true;
+        } else {
+            $response['errors']['password'] = 'Incorrect password!';
+        }
+    } else {
+        $response['errors']['email'] = 'Email not found!';
+    }
+
+    $stmt->close();
+}
+$conn->close();
+
+header('Content-Type: application/json');
+echo json_encode($response);
