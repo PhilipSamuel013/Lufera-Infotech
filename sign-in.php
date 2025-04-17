@@ -29,14 +29,14 @@
                         <img src="assets/images/logo_lufera.png" alt="">
                     </a>
                     <h4 class="mb-12">Sign In</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your detail</p>
+                    <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your details</p>
                 </div>
                 <form id="login-form">
                     <div class="icon-field mb-16">
                         <span class="icon translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input id="email" type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email" name="email">
+                        <input id="email" type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email" name="email" required>
                         <div id="email-error" class="error text-danger mt-1"></div>
 
                     </div>
@@ -46,7 +46,7 @@
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
 
-                            <input id="password" type="password" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Password" name="password">
+                            <input id="password" type="password" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Password" name="password" required>
                             <div id="password-error" class="error text-danger mt-1"></div>
                             <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 translate-middle-y me-16 text-secondary-light icon" data-toggle="#password"></span>
                         </div>
