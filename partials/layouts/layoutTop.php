@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
-<?php include './partials/head.php' ?>
+<?php include './partials/head.php';
+      include './partials/connection.php';
+      session_start(); ?>
 
 <body>
 
