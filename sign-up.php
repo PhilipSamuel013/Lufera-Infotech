@@ -88,7 +88,7 @@
                         <img src="assets/images/logo_lufera.png" alt="" style="width: 55%">
                     </a>
                     <h4 class="mb-12">Sign Up</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Welcome back! enter your details</p>
+                    <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your details</p>
                 </div>
 
                 <?php if ($success): ?>
