@@ -1,4 +1,5 @@
-<?php include './partials/layouts/layoutTop.php' ?>
+<?php include './partials/layouts/layoutTop.php';
+include 'check_login.php'; ?>
 
         <!-- <div class="dashboard-main-body">
 

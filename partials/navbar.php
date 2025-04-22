@@ -1,6 +1,3 @@
-
-
-
 <div class="navbar-header">
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto">
@@ -314,8 +311,15 @@
                             <div class="dropdown-menu to-top dropdown-menu-sm">
                                 <div class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
                                     <div>
-                                    
-                                        <h6 class="text-lg text-primary-light fw-semibold mb-2">Philip</h6>
+
+                                    <!-- Bind the username dynamically.. -->
+                                    <?php if (isset($_SESSION['username'])): ?>
+                                        <h6 class="text-lg text-primary-light fw-semibold mb-2"><?php echo $_SESSION['username']; ?></h6>
+                                    <?php else: ?>
+                                        <h6 class="text-lg text-primary-light fw-semibold mb-2">none</h6>
+                                    <?php endif; ?>
+
+                                        <!-- <h6 class="text-lg text-primary-light fw-semibold mb-2">Philip</h6> -->
                                         <span class="text-secondary-light fw-medium text-sm">Admin</span>
                                     </div>
                                     <button type="button" class="hover-text-danger">
