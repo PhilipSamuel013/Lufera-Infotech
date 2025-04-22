@@ -15094,4 +15094,14 @@ td.fc-header-center {
   margin-block-start: auto;
 }
 
+.lufera-bg{
+  background-color: #fec700 !important;
+}
+.button-tab .nav-link.active{
+  background-color: #fec700 !important;
+  border-color: #fec700 !important;
+}
+.popular-border{
+  border: 1px solid #fec700 !important;
+}
 /* === footer css end === */
