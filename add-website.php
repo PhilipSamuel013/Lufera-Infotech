@@ -28,11 +28,11 @@
                                 <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab" tabindex="0">
                                     <div class="row gy-4">
                                         <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border bg-lilac-100">
+                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border">
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon1.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
                                                         <span class="fw-medium text-md text-secondary-light">Free</span>
                                                         <h6 class="mb-0">Personal</h6>
@@ -43,96 +43,96 @@
                                                 <span class="mb-20 fw-medium">A free plan grants you access to some cool features of Spend.In.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 1 Page</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle mt-4">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 1 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-lilac-600 bg-hover-lilac-700 text-white text-center border border-lilac-600 text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-white text-center  text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan scale-item position-relative radius-24 overflow-hidden border bg-primary-600 text-white">
-                                                <span class="bg-white bg-opacity-25 text-white radius-24 py-8 px-24 text-sm position-absolute end-0 top-0 z-1 rounded-start-top-0 rounded-end-bottom-0">Popular</span>
+                                            <div class="pricing-plan scale-item position-relative radius-24 overflow-hidden border popular-border">
+                                                <span class="bg-white bg-opacity-25 lufera-bg radius-24 py-8 px-24 text-sm position-absolute end-0 top-0 z-1 rounded-start-top-0 rounded-end-bottom-0">Popular</span>
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon2.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
-                                                        <span class="fw-medium text-md text-white">ULTIMATE</span>
-                                                        <h6 class="mb-0 text-white">Business</h6>
+                                                        <span class="fw-medium text-md">ULTIMATE</span>
+                                                        <h6 class="mb-0">Business</h6>
                                                     </div>
                                                 </div>
-                                                <p class="mt-16 mb-0 text-white mb-28">Best suits for great company! for 10 to 20 Pages Website</p>
-                                                <h3 class="mb-24 text-white">$3000 <span class="fw-medium text-md text-white">/year</span> </h3>
+                                                <p class="mt-16 mb-0 mb-28">Best suits for great company! for 10 to 20 Pages Website</p>
+                                                <h3 class="mb-24">$3000 <span class="fw-medium text-md">/Year</span> </h3>
                                                 <span class="mb-20 fw-medium">If you a finance manager at big company, this plan is a perfect match.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
-                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">1 Year</span>
+                                                        <span class="text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
-                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
+                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Domain</span>
+                                                        <span class="text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
-                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
+                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Hosting</span>
+                                                        <span class="text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle mt-4 text-primary-600">
-                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
+                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Web Development – 10 to 15 Pages</span>
+                                                        <span class="text-lg">Web Development – 10 to 15 Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle mt-4 text-primary-600">
-                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
+                                                            <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Support for Editing - 3 Hrs/Month Max</span>
+                                                        <span class="text-lg">Support for Editing - 3 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-white text-primary-600 text-white text-center border border-white text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-center text-white text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border bg-success-100">
+                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border">
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon3.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
                                                         <span class="fw-medium text-md text-secondary-light">Pro</span>
                                                         <h6 class="mb-0">Business Pro</h6>
@@ -143,37 +143,37 @@
                                                 <span class="mb-20 fw-medium">For professional only! Start arranging your expenses with our best templates.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 20+ Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 4 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="bg-success-600 lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
@@ -182,11 +182,11 @@
                                 <div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab" tabindex="0">
                                     <div class="row gy-4">
                                     <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border bg-lilac-100">
+                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border">
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon1.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
                                                         <span class="fw-medium text-md text-secondary-light">Free</span>
                                                         <h6 class="mb-0">Personal</h6>
@@ -197,96 +197,96 @@
                                                 <span class="mb-20 fw-medium">A free plan grants you access to some cool features of Spend.In.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 1 Page</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-lilac-600 rounded-circle mt-4">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 1 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-lilac-600 bg-hover-lilac-700 text-white text-center border border-lilac-600 text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg bg-hover-lilac-700 text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan scale-item position-relative radius-24 overflow-hidden border bg-primary-600 text-white">
-                                                <span class="bg-white bg-opacity-25 text-white radius-24 py-8 px-24 text-sm position-absolute end-0 top-0 z-1 rounded-start-top-0 rounded-end-bottom-0">Popular</span>
+                                            <div class="pricing-plan scale-item position-relative radius-24 overflow-hidden border popular-border">
+                                                <span class="lufera-bg bg-opacity-25 radius-24 py-8 px-24 text-sm position-absolute end-0 top-0 z-1 rounded-start-top-0 rounded-end-bottom-0">Popular</span>
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon2.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
-                                                        <span class="fw-medium text-md text-white">ULTIMATE</span>
-                                                        <h6 class="mb-0 text-white">Business</h6>
+                                                        <span class="fw-medium text-md">ULTIMATE</span>
+                                                        <h6 class="mb-0">Business</h6>
                                                     </div>
                                                 </div>
-                                                <p class="mt-16 mb-0 text-white mb-28">Best suits for great company! for 10 to 20 Pages Website</p>
-                                                <h3 class="mb-24 text-white">$5000 <span class="fw-medium text-md text-white">/Year</span> </h3>
+                                                <p class="mt-16 mb-0 mb-28">Best suits for great company! for 10 to 20 Pages Website</p>
+                                                <h3 class="mb-24">$5000 <span class="fw-medium text-md">/Year</span> </h3>
                                                 <span class="mb-20 fw-medium">If you a finance manager at big company, this plan is a perfect match.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">3 Years</span>
+                                                        <span class="text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Domain</span>
+                                                        <span class="text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Hosting</span>
+                                                        <span class="text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle mt-4 text-primary-600">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Web Development – 10 to 15 Pages</span>
+                                                        <span class="text-lg">Web Development – 10 to 15 Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle mt-4 text-primary-600">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
                                                         </span>
-                                                        <span class="text-white text-lg">Support for Editing - 5 Hrs/Month Max</span>
+                                                        <span class="text-lg">Support for Editing - 5 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-white text-primary-600 text-white text-center border border-white text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
-                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border bg-success-100">
+                                            <div class="pricing-plan position-relative radius-24 overflow-hidden border">
                                                 <div class="d-flex align-items-center gap-16">
-                                                    <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
+                                                    <!-- <span class="w-72-px h-72-px d-flex justify-content-center align-items-center radius-16 bg-base">
                                                         <img src="assets/images/pricing/price-icon3.png" alt="">
-                                                    </span>
+                                                    </span> -->
                                                     <div class="">
                                                         <span class="fw-medium text-md text-secondary-light">Pro</span>
                                                         <h6 class="mb-0">Business Pro</h6>
@@ -297,37 +297,37 @@
                                                 <span class="mb-20 fw-medium">For professional only! Start arranging your expenses with our best templates.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 20+ Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-success-600 rounded-circle">
+                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 6 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="bg-success-600 lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
