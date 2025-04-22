@@ -26,7 +26,7 @@
             </div>
         </div> -->
 
-        <?php include 'check_login.php';
+        <?php
             $websites = [
             ['domain' => 'tikitaka.com', 'status' => 'Active', 'expiry' => '2025-12-01'],
             ['domain' => 'anandtra.in', 'status' => 'Renewal', 'expiry' => '2024-05-15'],
