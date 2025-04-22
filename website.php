@@ -141,9 +141,9 @@ include 'check_login.php'; ?>
                 </form>
 
                 <div class="add-button">
-                    <form action="https://luferatech.com/package/" target="_blank" method="get">
-                    <button type="submit">+ Add New Website</button>
-                    </form>
+                    <a href="add-website.php">    
+                        <button>+ Add New Website</button>
+                    </a>
                 </div>
                 </div>
 
