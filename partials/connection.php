@@ -1,4 +1,11 @@
 <?php
+// Server
+// $servername = "localhost";
+// $username = "u363064277_lufera";
+// $password = "Lufera@789";
+// $dbname = "u363064277_LI_Dashboard";
+
+// Local
 $servername = "localhost";
 $username = "root";
 $password = "";

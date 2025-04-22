@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "lufera infotech");
+include './partials/connection.php';
 
 $response = [
     'success' => false,
