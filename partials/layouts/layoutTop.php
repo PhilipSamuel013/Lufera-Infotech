@@ -4,8 +4,8 @@
 
 <?php include './partials/head.php';
       include './partials/connection.php';
-      include 'check_login.php';
-      session_start(); ?>
+      include './partials/check_login.php';
+?>
 
 <body>
 

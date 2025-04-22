@@ -1,7 +1,7 @@
 <?php $script = '<script src="assets/js/homeOneChart.js"></script>';?>
 
 <?php include './partials/layouts/layoutTop.php';
-include 'check_login.php'; ?>
+?>
 
         <div class="dashboard-main-body">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
