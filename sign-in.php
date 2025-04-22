@@ -128,7 +128,7 @@
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                window.location.href = "index-3.php";
+                window.location.href = "admin-dashboard.php";
             } else {
                 const errors = data.errors || {};
 

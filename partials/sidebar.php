@@ -6,13 +6,13 @@
         <a href="index.php" class="sidebar-logo">
             <!-- <img src="assets/images/logo.png" alt="site logo" class="light-logo"> -->
             <img src="assets/images/logo_lufera.png" alt="site logo" class="light-logo">
-            <img src="assets/images/logo-light.png" alt="site logo" class="dark-logo">
-            <img src="assets/images/logo-icon.png" alt="site logo" class="logo-icon">
+            <img src="assets/images/Logo_dark.png" alt="site logo" class="dark-logo">
+            <img src="assets/images/Image.jfif" alt="site logo" class="logo-icon">
         </a>
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
                     <span>Home</span>
@@ -23,6 +23,12 @@
                         <a href="index-3.php"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Admin</a>
                     </li>
                 </ul>
+            </li> -->
+            <li>
+                <a href="admin-dashboard.php">
+                <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                    <span>Home</span>
+                </a>
             </li>
             <li>
                 <a href="website.php">
