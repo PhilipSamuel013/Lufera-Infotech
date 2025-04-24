@@ -8,6 +8,7 @@
     .toggle-password{
         inset-inline-start: auto !important;
     }
+    
 </style>
 <?php include './partials/head.php' ?>
 <body>
@@ -15,14 +16,14 @@
     <section class="auth bg-base d-flex flex-wrap">
         <div class="auth-left d-lg-block d-none">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center">
-                <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img" width="200px">
+                <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img">
             </div>
         </div>
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">
             <div class="max-w-464-px mx-auto w-100">
                 <div>
                     <a href="index.php" class="mb-40 max-w-290-px">
-                        <img src="assets/images/logo_lufera.png" alt="">
+                        <img src="assets/images/logo_lufera.png" alt="" width="200px">
                     </a>
                     <h4 class="mb-12">Sign In</h4>
                     <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your details</p>
