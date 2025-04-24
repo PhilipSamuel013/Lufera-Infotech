@@ -173,7 +173,7 @@
                                                         <span class="text-secondary-light text-lg">Support for Editing - 4 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-success-600 lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
@@ -327,7 +327,7 @@
                                                         <span class="text-secondary-light text-lg">Support for Editing - 6 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="bg-success-600 lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
 
                                             </div>
                                         </div>
