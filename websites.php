@@ -1,268 +1,274 @@
 <?php include './partials/layouts/layoutTop.php' ?>
 
+<?php
+// Sample websites data
+$websites = [
+  ['name' => 'My Portfolio', 'domain' => 'anandtra.lufera.in', 'plan' => 'Premium', 'status' => 'Active'],
+  ['name' => 'Blog Site', 'domain' => 'luferatech.com', 'plan' => 'Single', 'status' => 'Inactive'],
+  ['name' => 'Online Store', 'domain' => 'mystoreonline.com', 'plan' => 'Business', 'status' => 'Active'],
+  ['name' => 'E-commerce Website', 'domain' => 'shoponline.com', 'plan' => 'Business', 'status' => 'Active'],
+  ['name' => 'Tech Blog', 'domain' => 'techblog.org', 'plan' => 'Premium', 'status' => 'Inactive'],
+  ['name' => 'Portfolio Site', 'domain' => 'artistportfolio.net', 'plan' => 'Business', 'status' => 'Active'],
+  ['name' => 'News Portal', 'domain' => 'newssite.com', 'plan' => 'Premium', 'status' => 'Active'],
+  ['name' => 'Travel Blog', 'domain' => 'travelblog.co', 'plan' => 'Single', 'status' => 'Inactive'],
+  ['name' => 'Real Estate Site', 'domain' => 'realestateonline.com', 'plan' => 'Business', 'status' => 'Active'],
+  ['name' => 'Food Blog', 'domain' => 'foodblog.org', 'plan' => 'Premium', 'status' => 'Active']
+];
+
+// Number of websites per page
+$websitesPerPage = 5;
+
+// Get the current page from URL, default is 1
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// Calculate the starting index for the websites to display on this page
+$startIndex = ($page - 1) * $websitesPerPage;
+
+// Slice the websites array to get only the websites for the current page
+$websitesOnPage = array_slice($websites, $startIndex, $websitesPerPage);
+
+// Calculate the total number of pages
+$totalPages = ceil(count($websites) / $websitesPerPage);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Websites</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Websites</title>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
+    :root {
+      --yellow: #fec700;
+      --black: #101010;
+      --mild-blue: #e6f0ff;
+    }
+
+    /* body {
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--mild-blue);
+      color: var(--black);
+    } */
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 30px 0px 0px 50px;
+      padding: 20px 15px;
     }
 
-    .web-section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .web-section-header h1 {
-      font-size: 22px !important;
-      margin: 0;
-    }
-
-    .web-add-btn {
-      background-color: #facc15;
-      border: none;
-      padding: 10px 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .web-filters {
-      display: flex;
-      gap: 10px;
+    .header-row {
       margin-bottom: 20px;
-      flex-wrap: wrap;
-      align-items: center;
     }
 
-    .web-filters input,
-    .web-filters select {
-      padding: 8px 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 6px;
-    }
-
-    .web-fav-toggle {
-      font-size: 18px;
-      background: none;
-      border: none;
-      color: #facc15;
-      cursor: pointer;
-    }
-
-    .websites-list-row {
+    .search-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #fff;
-      padding: 14px 20px;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .web-info {
+    .search-container {
+      position: relative;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .search-container .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #999;
+    }
+
+    .search-container input[type="text"] {
+      width: 100%;
+      padding: 10px 10px 10px 35px;
+      font-size: 16px;
+      border: 2px solid var(--yellow);
+      border-radius: 5px;
+    }
+
+    .add-btn {
+      padding: 10px 16px;
+      background-color: var(--yellow);
+      color: var(--black);
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .list-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .list-wrapper {
       display: flex;
       flex-direction: column;
+      gap: 15px;
     }
 
-    .web-info h3 {
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border: 1px solid #eee;
+      border-left: 5px solid var(--yellow);
+      border-radius: 6px;
+      background-color: #fff;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .list-item:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .site-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .site-info h6 {
       margin: 0;
-      font-size: 16px !important;
-      color: #111827;
+      font-size: 18px !important;
+      font-weight: normal;
+      color: #333;
     }
 
-    .web-info a {
-      color: #3b82f6;
+    h5 {
+      font-size: 20px !important;
+    }
+
+    .site-meta {
+      text-align: right;
       font-size: 14px;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .status-active { color: green; }
+    .status-inactive { color: red; }
+
+    .dashboard-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: var(--black);
+      color: var(--yellow);
+    }
+
+    .dashboard-btn:hover {
+      background-color: #222;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pagination a {
+      padding: 8px 15px;
+      background-color: var(--yellow);
+      color: var(--black);
+      border-radius: 5px;
       text-decoration: none;
     }
 
-    .web-action-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .pagination a:hover {
+      background-color: #222;
     }
 
-    .web-dashboard-btn {
-      background-color: #facc15;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .web-menu-btn {
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .web-dropdown {
-      position: absolute;
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: none;
-      flex-direction: column;
-      min-width: 160px;
-      z-index: 10;
-    }
-
-    .web-dropdown button {
-      padding: 10px 14px;
-      border: none;
-      background: white;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .web-dropdown button:hover {
-      background: #f3f4f6;
-    }
-
-    .web-menu-wrapper {
-      position: relative;
-    }
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="web-section-header">
-  <h1>Website</h1>
-  <button class="web-add-btn">+ Add Hosting Plan</button>
-</div>
+<div class="content-wrapper">
 
-<!-- Filters -->
-<div class="web-filters">
-  <input type="text" id="webSearch" placeholder="Search websites...">
-  <select id="webTagFilter">
-    <option value="">Filter by tag</option>
-    <option value="blog">Blog</option>
-    <option value="ecommerce">E-Commerce</option>
-    <option value="portfolio">Portfolio</option>
-  </select>
-  <button class="web-fav-toggle" id="favToggle">&#9733;</button>
-</div>
-
-<!-- Website Rows -->
-<div id="websitesContainer">
-
-  <div class="websites-list-row" data-name="My Blog Site" data-tag="blog" data-fav="1">
-    <div class="web-info">
-      <!-- <h3>My Blog Site</h3> -->
-      <a href="https://anandtra.lufera.in/" style="color: black" target="_blank">anandtra.lufera.in</a>
-    </div>
-    <div class="web-action-right">
-      <button class="web-dashboard-btn">Dashboard</button>
-      <div class="web-menu-wrapper">
-        <button class="web-menu-btn" onclick="toggleWebMenu(this)">⋮</button>
-        <div class="web-dropdown">
-          <button onclick="alert('Add to Favorite')">Add to Fav.</button>
-          <button onclick="alert('Change Domain')">Change Domain</button>
-          <button onclick="alert('Deleted')">Delete</button>
-        </div>
-      </div>
-    </div>
+  <!-- Title -->
+  <div class="header-row">
+    <h5>Websites</h5>
   </div>
 
-  <div class="websites-list-row" data-name="Ecom Shop" data-tag="ecommerce" data-fav="0">
-    <div class="web-info">
-      <!-- <h3>Ecom Shop</h3> -->
-      <a href="https://luferatech.com/" style="color: black" target="_blank">luferatech.com</a>
+  <!-- Search + Add -->
+  <div class="search-card">
+    <div class="search-container">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Search websites...">
     </div>
-    <div class="web-action-right">
-      <button class="web-dashboard-btn">Dashboard</button>
-      <div class="web-menu-wrapper">
-        <button class="web-menu-btn" onclick="toggleWebMenu(this)">⋮</button>
-        <div class="web-dropdown">
-          <button onclick="alert('Add to Favorite')">Add to Fav.</button>
-          <button onclick="alert('Change Domain')">Change Domain</button>
-          <button onclick="alert('Deleted')">Delete</button>
-        </div>
-      </div>
-    </div>
+    <a href="add-website.php" class="add-btn">+ Add New Website</a>
   </div>
 
-  <div class="websites-list-row" data-name="John Portfolio" data-tag="portfolio" data-fav="1">
-    <div class="web-info">
-      <!-- <h3>John Portfolio</h3> -->
-      <a href="https://landscapeimmigration.com/" style="color: black" target="_blank">landscapeimmigration.com</a>
-    </div>
-    <div class="web-action-right">
-      <button class="web-dashboard-btn">Dashboard</button>
-      <div class="web-menu-wrapper">
-        <button class="web-menu-btn" onclick="toggleWebMenu(this)">⋮</button>
-        <div class="web-dropdown">
-          <button onclick="alert('Add to Favorite')">Add to Fav.</button>
-          <button onclick="alert('Change Domain')">Change Domain</button>
-          <button onclick="alert('Deleted')">Delete</button>
+  <!-- Website List -->
+  <div class="list-section" id="websiteList">
+    <h5 style="margin-top: 0; margin-bottom: 15px;">Business WordPress Hosting</h5>
+    <div class="list-wrapper">
+      <?php foreach ($websitesOnPage as $site): ?>
+        <div class="list-item">
+          <div class="site-info">
+            <h6><?php echo $site['domain']; ?></h6> <!-- Display only domain -->
+          </div>
+          <div class="site-meta">
+            <div>Plan: <?php echo $site['plan']; ?></div>
+            <div class="status status-<?php echo strtolower($site['status']); ?>">
+              <?php echo $site['status']; ?>
+            </div>
+            <a href="dashboard.php?site=<?php echo urlencode($site['domain']); ?>" class="dashboard-btn">Dashboard</a>
+          </div>
         </div>
-      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <?php if ($page > 1): ?>
+        <a href="?page=<?php echo $page - 1; ?>">Previous</a>
+      <?php endif; ?>
+
+      <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+        <a href="?page=<?php echo $i; ?>" class="<?php echo $i === $page ? 'active' : ''; ?>">
+          <?php echo $i; ?>
+        </a>
+      <?php endfor; ?>
+
+      <?php if ($page < $totalPages): ?>
+        <a href="?page=<?php echo $page + 1; ?>">Next</a>
+      <?php endif; ?>
     </div>
   </div>
 
 </div>
 
 <script>
-  const searchInput = document.getElementById('webSearch');
-  const tagFilter = document.getElementById('webTagFilter');
-  const favToggle = document.getElementById('favToggle');
-  const websitesContainer = document.getElementById('websitesContainer');
-  let showFavOnly = false;
-
-  function filterWebsites() {
-    const search = searchInput.value.toLowerCase();
-    const tag = tagFilter.value;
-
-    document.querySelectorAll('.websites-list-row').forEach(row => {
-      const name = row.dataset.name.toLowerCase();
-      const siteTag = row.dataset.tag;
-      const isFav = row.dataset.fav === '1';
-
-      const matchesSearch = name.includes(search);
-      const matchesTag = !tag || tag === siteTag;
-      const matchesFav = !showFavOnly || isFav;
-
-      row.style.display = (matchesSearch && matchesTag && matchesFav) ? 'flex' : 'none';
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('keyup', function () {
+    const filter = searchInput.value.toLowerCase();
+    const items = document.querySelectorAll("#websiteList .list-item");
+    items.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = text.includes(filter) ? '' : 'none';
     });
-  }
-
-  searchInput.addEventListener('input', filterWebsites);
-  tagFilter.addEventListener('change', filterWebsites);
-  favToggle.addEventListener('click', () => {
-    showFavOnly = !showFavOnly;
-    favToggle.style.color = showFavOnly ? '#f59e0b' : '#facc15';
-    filterWebsites();
-  });
-
-  function toggleWebMenu(btn) {
-    const dropdown = btn.nextElementSibling;
-    document.querySelectorAll('.web-dropdown').forEach(menu => {
-      if (menu !== dropdown) menu.style.display = 'none';
-    });
-    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
-  }
-
-  window.addEventListener('click', function(e) {
-    if (!e.target.matches('.web-menu-btn')) {
-      document.querySelectorAll('.web-dropdown').forEach(menu => {
-        menu.style.display = 'none';
-      });
-    }
   });
 </script>
 
