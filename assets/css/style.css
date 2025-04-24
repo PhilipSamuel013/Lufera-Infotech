@@ -12042,7 +12042,7 @@ div.dt-container .dt-paging .dt-paging-button:focus {
 }
 
 div.dt-container .dt-paging .dt-paging-button:hover, div.dt-container .dt-paging .dt-paging-button.current {
-  background: var(--primary-600) !important;
+  background: #fec700 !important;
   color: #fff !important;
 }
 
@@ -14939,12 +14939,12 @@ td.fc-header-center {
   }
 }
 .sidebar-menu li.dropdown.open > a, .sidebar-menu li.dropdown.dropdown-open > a {
-  background-color: var(--brand);
-  color: #fff;
+  /* background-color: #fff9d3;
+  color: #fec700; */
 }
 
 .sidebar-menu li.dropdown.open > a:hover, .sidebar-menu li.dropdown.dropdown-open > a:hover {
-  color: #fff;
+  color: #000;
 }
 
 .sidebar-menu li.dropdown.open > a::after, .sidebar-menu li.dropdown.dropdown-open > a::after {
@@ -14958,13 +14958,13 @@ td.fc-header-center {
 }
 
 .sidebar-menu li > a.active-page {
-  background-color: var(--brand);
-  color: #fff;
+  background-color: #fff9d3;
+  color: #000;
 }
 
-.sidebar-menu li > a.active-page:hover {
+/* .sidebar-menu li > a.active-page:hover {
   color: #fff;
-}
+} */
 
 .sidebar-menu li a {
   padding: 0.625rem 0.75rem;
@@ -14986,7 +14986,7 @@ td.fc-header-center {
   }
 }
 .sidebar-menu li a:hover {
-  color: var(--brand);
+  color: #fec700;
 }
 
 .sidebar-menu li a .menu-icon {
@@ -15024,8 +15024,8 @@ td.fc-header-center {
   }
 }
 .sidebar-menu .sidebar-submenu li.active-page a {
-  background-color: var(--button-secondary);
-  color: var(--text-primary-light);
+  background-color: #fff9d3;
+  color: #000;
 }
 
 .sidebar-menu .sidebar-submenu li a {
@@ -15103,5 +15103,32 @@ td.fc-header-center {
 }
 .popular-border{
   border: 1px solid #fec700 !important;
+}
+.website-table tbody tr td{
+  border-bottom: none !important;
+  border-bottom-width: 0 !important;
+}
+.website-btn{
+  padding: 6px 16px !important;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff !important;
+    border: 1px solid #fec700;
+    color: #fec700 !important;
+    margin: 0px 4px;
+}
+.add-website-btn{
+  background: #fec700;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 8px;
+}
+.sign-in-img{
+  height: -webkit-fill-available;
+  object-fit: cover;
+}
+.sign-up-img{
+  background-image: url(../images/1.jpg);
+  background-size: cover;
 }
 /* === footer css end === */

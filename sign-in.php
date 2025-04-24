@@ -8,10 +8,6 @@
     .toggle-password{
         inset-inline-start: auto !important;
     }
-    .sign-in-img{
-        height: -webkit-fill-available;
-        object-fit: cover;
-    }
 </style>
 <?php include './partials/head.php' ?>
 <body>
@@ -19,7 +15,7 @@
     <section class="auth bg-base d-flex flex-wrap">
         <div class="auth-left d-lg-block d-none">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center">
-                <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img">
+                <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img" width="200px">
             </div>
         </div>
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">

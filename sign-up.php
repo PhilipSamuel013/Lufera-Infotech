@@ -13,7 +13,7 @@
         }
         .success {
             color: green;
-            font-weight: bold;
+            /* font-weight: bold; */
             margin-bottom: 10px;
         }
     </style>
@@ -38,7 +38,7 @@
         }
     
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = "Email is required";
+            $errors['email'] = "Valid email is required";
         } else {
             $checkEmail = $conn->prepare("SELECT id FROM users WHERE email = ?");
             $checkEmail->bind_param("s", $email);
@@ -50,42 +50,56 @@
             $checkEmail->close();
         }
     
-        // if (strlen($password) < 6) {
-        //     $errors['password'] = "Password must be at least 6 characters";
-        // }
         if (empty($password)) {
             $errors['password'] = "Password is required";
         }
-    
+        if (empty($_POST['checkbox'])) {
+            $errors['checkbox'] = 'Tick this box to continue';
+        }
         // Insert if no errors
         if (empty($errors)) {
+            // Generate new user_id
+            $result = $conn->query("SELECT user_id FROM users ORDER BY id DESC LIMIT 1");
+            $lastId = "LI000";
+            if ($result && $row = $result->fetch_assoc()) {
+                $lastId = $row['user_id'];
+            }
+    
+            $num = (int)substr($lastId, 2) + 1;
+            $newUserId = 'LI' . str_pad($num, 3, '0', STR_PAD_LEFT);
+    
             // $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $username, $email, $password);
+            $stmt = $conn->prepare("INSERT INTO users (user_id, username, email, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $newUserId, $username, $email, $password);
+            
             if ($stmt->execute()) {
                 $success = "Registration successful!";
                 $username = $email = $password = ""; // clear inputs
+            } else {
+                $errors['general'] = "Error while registering user.";
             }
+    
             $stmt->close();
         }
     }
+    
 ?>
 
 <body>
 
     <section class="auth bg-base d-flex flex-wrap">
         <div class="auth-left d-lg-block d-none">
-            <div class="d-flex align-items-center flex-column h-100 justify-content-center">
+            <div class="d-flex align-items-center flex-column h-100 justify-content-center sign-up-img">
                 <!-- <img src="assets/images/auth/auth-img.png" alt=""> -->
-                <img src="assets/images/1.jpg" alt="">
+                <!-- <img src="assets/images/signin-page.jpg" alt="" class="sign-in-img"> -->
             </div>
         </div>
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">
-            <div class="max-w-464-px mx-auto w-100">
+            <div class="max-w-464-px mx-auto w-100 m-auto">
                 <div>
                     <a href="sign-up.php" class="mb-40 max-w-290-px">
                         <!-- <img src="assets/images/logo.png" alt=""> -->
-                        <img src="assets/images/logo_lufera.png" alt="" style="width: 55%">
+                        <img src="assets/images/logo_lufera.png" alt="" width="200px">
                     </a>
                     <h4 class="mb-12">Sign Up</h4>
                     <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your details</p>
@@ -132,10 +146,10 @@
                         </div>
                         <!-- <span class="mt-12 text-sm text-secondary-light">Your password must have at least 8 characters</span> -->
                     </div>
-                    <div class="">
+                    <div>
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-start">
-                                <input class="form-check-input border border-neutral-300 mt-4" type="checkbox" value="" id="condition">
+                                <input class="form-check-input border border-neutral-300 mt-4" type="checkbox" name="checkbox" id="condition" <?= isset($_POST['checkbox']) ? 'checked' : '' ?>>
                                 <label class="form-check-label text-sm" for="condition">
                                     By creating an account means you agree to the
                                     <a href="javascript:void(0)" class="text-primary-600 fw-semibold">Terms & Conditions</a> and our
@@ -145,6 +159,10 @@
 
                         </div>
                     </div>
+                    
+                    <?php if (isset($errors['checkbox'])): ?>
+                        <div class="error"><?= $errors['checkbox'] ?></div>
+                    <?php endif; ?>
 
                     <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"> Sign Up</button>
 
