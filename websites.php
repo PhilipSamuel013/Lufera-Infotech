@@ -51,8 +51,10 @@ $totalPages = ceil(count($websites) / $websitesPerPage);
     } */
 
     .content-wrapper {
-      max-width: 1200px;
-      margin: 30px 0px 0px 50px;
+      /* max-width: 1200px; */
+      /* margin: 30px 0px 0px 50px; */
+      width: 100%;
+      margin: 0 auto;
       padding: 20px 15px;
     }
 
