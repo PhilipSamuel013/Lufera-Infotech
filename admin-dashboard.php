@@ -8,9 +8,9 @@
                 
                 <!-- Bind the username dynamically.. -->
                 <?php if (isset($_SESSION['username'])): ?>
-                    <h6 class="fw-semibold mb-0">Hello, <?php echo $_SESSION['username']; ?>!</h6>
+                    <h6 class="fw-semibold mb-0">Hello <?php echo $_SESSION['username']; ?>!</h6>
                 <?php else: ?>
-                    <h6 class="fw-semibold mb-0">Hello, none!</h6>
+                    <h6 class="fw-semibold mb-0">Hello none!</h6>
                 <?php endif; ?>
 
                 <!-- <h6 class="fw-semibold mb-0">Dashboard</h6> -->
@@ -27,49 +27,49 @@
                 </ul> -->
             </div>
 
-            <div class="row row-cols-xxxl-5 row-cols-lg-2 row-cols-sm-2 row-cols-1 gy-4" style="margin-bottom: 30px;">
+            <!-- <div class="row row-cols-xxxl-5 row-cols-lg-2 row-cols-sm-2 row-cols-1 gy-4" style="margin-bottom: 30px;">
                 <div class="col">
                     <div class="card shadow-none border bg-gradient-start-1 h-100">
                         <div class="card-body p-20">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                                 <div>
-                                    <p class="fw-medium text-primary-light mb-1"><b>Account sharing</b></p>
+                                    <p class="fw-medium text-primary-light mb-1"><b>Account sharing</b></p> -->
                                     <!-- <h6 class="mb-0">20,000</h6> -->
-                                </div>
+                                <!-- </div>
                                 <div class="w-50-px h-50-px bg-cyan rounded-circle d-flex justify-content-center align-items-center">
                                     <iconify-icon icon="gridicons:multiple-users" class="text-white text-2xl mb-0"></iconify-icon>
                                 </div>
                             </div>
-                            <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
+                            <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2"> -->
                                 <!-- <span class="d-inline-flex align-items-center gap-1 text-success-main">
                                     <iconify-icon icon="bxs:up-arrow" class="text-xs"></iconify-icon> +5000
                                 </span> -->
-                                Access your managed accounts with ease
-                            </p>
+                                <!-- Access your managed accounts with ease -->
+                            <!-- </p>
                         </div>
-                    </div><!-- card end -->
-                </div>
+                    </div>card end -->
+                <!-- </div>
                 <div class="col">
                     <div class="card shadow-none border bg-gradient-start-2 h-100">
                         <div class="card-body p-20">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                                 <div>
-                                    <p class="fw-medium text-primary-light mb-1"><b>Refer & earn up to 200 USD</b></p>
+                                    <p class="fw-medium text-primary-light mb-1"><b>Refer & earn up to 200 USD</b></p> -->
                                     <!-- <h6 class="mb-0">15,000</h6> -->
-                                </div>
+                                <!-- </div>
                                 <div class="w-50-px h-50-px bg-purple rounded-circle d-flex justify-content-center align-items-center">
                                     <iconify-icon icon="fa-solid:award" class="text-white text-2xl mb-0"></iconify-icon>
                                 </div>
                             </div>
-                            <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
+                            <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2"> -->
                                 <!-- <span class="d-inline-flex align-items-center gap-1 text-danger-main">
                                     <iconify-icon icon="bxs:down-arrow" class="text-xs"></iconify-icon> -800
                                 </span> -->
-                                Refer your clients and earn commission
-                            </p>
+                                <!-- Refer your clients and earn commission -->
+                            <!-- </p>
                         </div>
-                    </div><!-- card end -->
-                </div>
+                    </div>card end -->
+                <!-- </div> -->
                 <!-- <div class="col">
                     <div class="card shadow-none border bg-gradient-start-3 h-100">
                         <div class="card-body p-20">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+            <!-- </div> -->
 
         <div class="row gy-4">
         <div class="col-xxl-12">
