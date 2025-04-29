@@ -12078,7 +12078,7 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
 
 .form-select:focus, .form-select:active, .form-control:focus, .form-control:active, textarea:focus, textarea:active {
   box-shadow: none;
-  border-color: var(--primary-600) !important;
+  border-color: #fec700 !important;
   background-color: transparent;
 }
 
@@ -15130,5 +15130,8 @@ td.fc-header-center {
 .sign-up-img{
   background-image: url(../images/1.jpg);
   background-size: cover;
+}
+.navbar-search input:focus {
+  border-color: #101010 !important;
 }
 /* === footer css end === */
