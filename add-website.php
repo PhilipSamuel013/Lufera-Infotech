@@ -43,37 +43,39 @@
                                                 <span class="mb-20 fw-medium">A free plan grants you access to some cool features of Spend.In.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 1 Page</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 1 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="lufera-bg text-white text-center  text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <a href="forms.php" class="d-block">
+                                                    <button type="button" class="lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
@@ -93,31 +95,31 @@
                                                 <span class="mb-20 fw-medium">If you a finance manager at big company, this plan is a perfect match.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle text-primary-600">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Web Development – 10 to 15 Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-primary-600">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg text-white"></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Support for Editing - 3 Hrs/Month Max</span>
@@ -143,31 +145,31 @@
                                                 <span class="mb-20 fw-medium">For professional only! Start arranging your expenses with our best templates.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">1 Year</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 20+ Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                    <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 4 Hrs/Month Max</span>
@@ -197,37 +199,37 @@
                                                 <span class="mb-20 fw-medium">A free plan grants you access to some cool features of Spend.In.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 1 Page</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 1 Hrs/Month Max</span>
                                                     </li>
                                                 </ul>
-                                                <button type="button" class="lufera-bg bg-hover-lilac-700 text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
+                                                <button type="button" class="lufera-bg text-white text-center text-sm btn-sm px-12 py-10 w-100 radius-8 mt-28" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</button>
                                             </div>
                                         </div>
                                         <div class="col-xxl-4 col-sm-6">
@@ -247,31 +249,31 @@
                                                 <span class="mb-20 fw-medium">If you a finance manager at big company, this plan is a perfect match.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Web Development – 10 to 15 Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle mt-4 text-white">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-lg">Support for Editing - 5 Hrs/Month Max</span>
@@ -297,31 +299,31 @@
                                                 <span class="mb-20 fw-medium">For professional only! Start arranging your expenses with our best templates.</span>
                                                 <ul>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">3 Years</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Domain</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Hosting</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-16 mb-16">
-                                                        <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                        <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg   "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Web Development – 20+ Pages</span>
                                                     </li>
                                                     <li class="d-flex gap-16">
-                                                    <span class="w-24-px h-24-px d-flex justify-content-center align-items-center lufera-bg rounded-circle">
+                                                    <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center lufera-bg rounded-circle">
                                                             <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                         </span>
                                                         <span class="text-secondary-light text-lg">Support for Editing - 6 Hrs/Month Max</span>
@@ -376,25 +378,25 @@
                                         <span class="mb-20 fw-medium">What’s included</span>
                                         <ul>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">All analytics features</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Up to 250,000 tracked visits</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Normal support</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Up to 3 team members</span>
@@ -421,25 +423,25 @@
                                         <span class="mb-20 fw-medium">What’s included</span>
                                         <ul>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                 </span>
                                                 <span class="text-white text-lg">All analytics features</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                 </span>
                                                 <span class="text-white text-lg">Up to 250,000 tracked visits</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                 </span>
                                                 <span class="text-white text-lg">Normal support</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-white rounded-circle text-primary-600">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-lg   "></iconify-icon>
                                                 </span>
                                                 <span class="text-white text-lg">Up to 3 team members</span>
@@ -465,25 +467,25 @@
                                         <span class="mb-20 fw-medium">What’s included</span>
                                         <ul>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">All analytics features</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Up to 250,000 tracked visits</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16 mb-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Normal support</span>
                                             </li>
                                             <li class="d-flex align-items-center gap-16">
-                                                <span class="w-24-px h-24-px d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
+                                                <span class="w-24-px h-24-px p-2 d-flex justify-content-center align-items-center bg-primary-600 rounded-circle">
                                                     <iconify-icon icon="iconamoon:check-light" class="text-white text-lg "></iconify-icon>
                                                 </span>
                                                 <span class="text-secondary-light text-lg">Up to 3 team members</span>
