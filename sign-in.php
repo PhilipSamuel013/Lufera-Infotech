@@ -5,10 +5,9 @@
     .border-danger {
         border: 1px solid red !important;
     }
-    .toggle-password{
+    .toggle-password {
         inset-inline-start: auto !important;
     }
-    
 </style>
 <?php include './partials/head.php' ?>
 <body>
