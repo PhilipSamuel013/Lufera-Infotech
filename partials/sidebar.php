@@ -3,7 +3,7 @@
         <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
     </button>
     <div>
-        <a href="index.php" class="sidebar-logo">
+        <a href="admin-dashboard.php" class="sidebar-logo">
             <!-- <img src="assets/images/logo.png" alt="site logo" class="light-logo"> -->
             <img src="assets/images/logo_lufera.png" alt="site logo" class="light-logo">
             <img src="assets/images/Logo_dark.png" alt="site logo" class="dark-logo">
@@ -62,7 +62,7 @@
                     <span>Chat</span>
                 </a>
             </li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
                     <span>Invoice</span>
@@ -81,7 +81,7 @@
                         <a href="invoice-edit.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Edit</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
@@ -89,17 +89,17 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="users-list.php"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i> Users List</a>
-                    </li>
-                    <li>
-                        <a href="users-grid.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
-                    </li>
-                    <li>
                         <a href="add-user.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Add User</a>
                     </li>
                     <li>
-                        <a href="view-profile.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> View Profile</a>
+                        <a href="users-list.php"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i> Users List</a>
                     </li>
+                    <!-- <li>
+                        <a href="users-grid.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
+                    </li>
+                    <li>
+                        <a href="view-profile.php"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> View Profile</a>
+                    </li> -->
                 </ul>
             </li>
         </ul>
