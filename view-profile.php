@@ -34,6 +34,15 @@
     </script>';?>
 
 <?php include './partials/layouts/layoutTop.php' ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<?php
+
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM `users` WHERE id = $user_id";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+?>
+
 
         <div class="dashboard-main-body">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
@@ -49,7 +58,6 @@
                     <li class="fw-medium">View Profile</li>
                 </ul>
             </div>
-
             <div class="row gy-4">
                 <div class="col-lg-4">
                     <div class="user-grid-card position-relative border radius-16 overflow-hidden bg-base h-100">
@@ -57,39 +65,59 @@
                         <div class="pb-24 ms-16 mb-24 me-16  mt--100">
                             <div class="text-center border border-top-0 border-start-0 border-end-0">
                                 <img src="assets/images/user-grid/user-grid-img14.png" alt="" class="border br-white border-width-2-px w-200-px h-200-px rounded-circle object-fit-cover">
-                                <h6 class="mb-0 mt-16">Jacob Jones</h6>
-                                <span class="text-secondary-light mb-16">ifrandom@gmail.com</span>
+                                <h6 class="mb-0 mt-16"><?php echo $row['username']; ?></h6>
+                                <span class="text-secondary-light mb-16"><?php echo $row['email']; ?></span>
                             </div>
                             <div class="mt-24">
                                 <h6 class="text-xl mb-16">Personal Info</h6>
                                 <ul>
                                     <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light">Full Name</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: Will Jonto</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light">Business Name</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['business_name']; ?> </span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light"> Email</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: willjontoax@gmail.com</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['email']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light"> Phone Number</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: (1) 2536 2561 2365</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['phone']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
-                                        <span class="w-30 text-md fw-semibold text-primary-light"> Department</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: Design</span>
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Address</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['address']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
-                                        <span class="w-30 text-md fw-semibold text-primary-light"> Designation</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: UI UX Designer</span>
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> City</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['city']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
-                                        <span class="w-30 text-md fw-semibold text-primary-light"> Languages</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: English</span>
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> State</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['state']; ?></span>
                                     </li>
-                                    <li class="d-flex align-items-center gap-1">
-                                        <span class="w-30 text-md fw-semibold text-primary-light"> Bio</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Country</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['country']; ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Pin</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['pincode']; ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Date of Birth</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['dob']; ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Role</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['role']; ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Client ID</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['user_id']; ?></span>
                                     </li>
                                 </ul>
                             </div>
@@ -110,7 +138,7 @@
                                         Change Password
                                     </button>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <li class="nav-item d-none" role="presentation">
                                     <button class="nav-link d-flex align-items-center px-24" id="pills-notification-tab" data-bs-toggle="pill" data-bs-target="#pills-notification" type="button" role="tab" aria-controls="pills-notification" aria-selected="false" tabindex="-1">
                                         Notification Settings
                                     </button>
@@ -136,61 +164,73 @@
                                         </div>
                                     </div>
                                     <!-- Upload Image End -->
-                                    <form action="#">
+                                    <form id="updateForm">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Full Name <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="name" placeholder="Enter Full Name">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">First Name <span class="text-danger-600">*</span></label>
+                                                    <input type="hidden" name="id" value="<?php echo $_SESSION['user_id']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="fname" value="<?php echo $row['first_name']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="email" class="form-label fw-semibold text-primary-light text-sm mb-8">Email <span class="text-danger-600">*</span></label>
-                                                    <input type="email" class="form-control radius-8" id="email" placeholder="Enter email address">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Last Name <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="lname" value="<?php echo $row['last_name']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="number" class="form-label fw-semibold text-primary-light text-sm mb-8">Phone</label>
-                                                    <input type="email" class="form-control radius-8" id="number" placeholder="Enter phone number">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Username <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="uname" value="<?php echo $row['username']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="depart" class="form-label fw-semibold text-primary-light text-sm mb-8">Department <span class="text-danger-600">*</span> </label>
-                                                    <select class="form-control radius-8 form-select" id="depart">
-                                                        <option>Enter Event Title </option>
-                                                        <option>Enter Event Title One </option>
-                                                        <option>Enter Event Title Two</option>
-                                                    </select>
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Bussiness Name <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="bname" value="<?php echo $row['business_name']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="desig" class="form-label fw-semibold text-primary-light text-sm mb-8">Designation <span class="text-danger-600">*</span> </label>
-                                                    <select class="form-control radius-8 form-select" id="desig">
-                                                        <option>Enter Designation Title </option>
-                                                        <option>Enter Designation Title One </option>
-                                                        <option>Enter Designation Title Two</option>
-                                                    </select>
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Email <span class="text-danger-600">*</span></label>
+                                                    <input type="email" class="form-control radius-8" id="" name="email" value="<?php echo $row['email']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
-                                                    <label for="Language" class="form-label fw-semibold text-primary-light text-sm mb-8">Language <span class="text-danger-600">*</span> </label>
-                                                    <select class="form-control radius-8 form-select" id="Language">
-                                                        <option> English</option>
-                                                        <option> Bangla </option>
-                                                        <option> Hindi</option>
-                                                        <option> Arabic</option>
-                                                    </select>
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Phone <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="phone" value="<?php echo $row['phone']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-20">
-                                                    <label for="desc" class="form-label fw-semibold text-primary-light text-sm mb-8">Description</label>
-                                                    <textarea name="#0" class="form-control radius-8" id="desc" placeholder="Write description..."></textarea>
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Address <span class="text-danger-600">*</span></label>
+                                                    <textarea class="form-control radius-8" id="" name="address"><?php echo $row['address']; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mb-20">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">City <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" name="city" value="<?php echo $row['city']; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mb-20">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">State <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="state" value="<?php echo $row['state']; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mb-20">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Country <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="country" value="<?php echo $row['country']; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mb-20">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Pin <span class="text-danger-600">*</span></label>
+                                                    <input type="text" class="form-control radius-8" id="" name="pin" value="<?php echo $row['pincode']; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -198,11 +238,10 @@
                                             <button type="button" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8">
                                                 Cancel
                                             </button>
-                                            <button type="button" class="btn btn-primary border border-primary-600 text-md px-56 py-12 radius-8">
-                                                Save
-                                            </button>
+                                            <button type="submit" class="lufera-bg bg-hover-warning-400 text-white text-md px-56 py-11 radius-8">Update</button> 
                                         </div>
                                     </form>
+                                    <div id="result"></div>
                                 </div>
 
                                 <div class="tab-pane fade" id="pills-change-passwork" role="tabpanel" aria-labelledby="pills-change-passwork-tab" tabindex="0">
@@ -266,5 +305,27 @@
                 </div>
             </div>
         </div>
+
+
+<script>
+    $('#updateForm').submit(function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: 'update.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+            $('#result').html(response);
+            loadUserData(); // Reload user data after update
+        },
+        error: function(xhr) {
+            $('#result').html("Error updating data.");
+        }
+    });
+});
+
+loadUserData();
+</script>
 
 <?php include './partials/layouts/layoutBottom.php' ?>
