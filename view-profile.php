@@ -47,16 +47,7 @@ $row = $result->fetch_assoc();
         <div class="dashboard-main-body">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
                 <h6 class="fw-semibold mb-0">View Profile</h6>
-                <ul class="d-flex align-items-center gap-2">
-                    <li class="fw-medium">
-                        <a href="index.php" class="d-flex align-items-center gap-1 hover-text-primary">
-                            <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>-</li>
-                    <li class="fw-medium">View Profile</li>
-                </ul>
+                
             </div>
             <div class="row gy-4">
                 <div class="col-lg-4">
@@ -88,6 +79,10 @@ $row = $result->fetch_assoc();
                                         <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['phone']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
+                                        <span class="w-30 text-md fw-semibold text-primary-light"> Date of Birth</span>
+                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo date('d/m/Y', strtotime($row['dob'])); ?></span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light"> Address</span>
                                         <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['address']; ?></span>
                                     </li>
@@ -106,10 +101,6 @@ $row = $result->fetch_assoc();
                                     <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light"> Pin</span>
                                         <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['pincode']; ?></span>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-1 mb-12">
-                                        <span class="w-30 text-md fw-semibold text-primary-light"> Date of Birth</span>
-                                        <span class="w-70 text-secondary-light fw-medium">: <?php echo $row['dob']; ?></span>
                                     </li>
                                     <li class="d-flex align-items-center gap-1 mb-12">
                                         <span class="w-30 text-md fw-semibold text-primary-light"> Role</span>
@@ -170,67 +161,74 @@ $row = $result->fetch_assoc();
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">First Name <span class="text-danger-600">*</span></label>
                                                     <input type="hidden" name="id" value="<?php echo $_SESSION['user_id']; ?>">
-                                                    <input type="text" class="form-control radius-8" id="" name="fname" value="<?php echo $row['first_name']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="fname" value="<?php echo $row['first_name']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Last Name <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="lname" value="<?php echo $row['last_name']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="lname" value="<?php echo $row['last_name']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Username <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="uname" value="<?php echo $row['username']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="uname" value="<?php echo $row['username']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Bussiness Name <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="bname" value="<?php echo $row['business_name']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="bname" value="<?php echo $row['business_name']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Email <span class="text-danger-600">*</span></label>
-                                                    <input type="email" class="form-control radius-8" id="" name="email" value="<?php echo $row['email']; ?>">
+                                                    <input type="email" class="form-control radius-8" id="" name="email" value="<?php echo $row['email']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Phone <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="phone" value="<?php echo $row['phone']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="phone" value="<?php echo $row['phone']; ?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="mb-20">
+                                                    <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Date of Birth <span class="text-danger-600">*</span></label>
+                                                    <input type="date" class="form-control radius-8" id="" name="dob" value="<?php echo $row['dob']; ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Address <span class="text-danger-600">*</span></label>
-                                                    <textarea class="form-control radius-8" id="" name="address"><?php echo $row['address']; ?></textarea>
+                                                    <!-- <textarea class="form-control radius-8" id="" name="address" required><?php echo $row['address']; ?></textarea> -->
+                                                    <input type="text" class="form-control radius-8" id="" name="address" value="<?php echo $row['address']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">City <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" name="city" value="<?php echo $row['city']; ?>">
+                                                    <input type="text" class="form-control radius-8" name="city" value="<?php echo $row['city']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">State <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="state" value="<?php echo $row['state']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="state" value="<?php echo $row['state']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Country <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="country" value="<?php echo $row['country']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="country" value="<?php echo $row['country']; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="mb-20">
                                                     <label for="" class="form-label fw-semibold text-primary-light text-sm mb-8">Pin <span class="text-danger-600">*</span></label>
-                                                    <input type="text" class="form-control radius-8" id="" name="pin" value="<?php echo $row['pincode']; ?>">
+                                                    <input type="text" class="form-control radius-8" id="" name="pin" value="<?php echo $row['pincode']; ?>" required>
                                                 </div>
                                             </div>
                                         </div>

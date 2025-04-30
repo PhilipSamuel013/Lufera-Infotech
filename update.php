@@ -17,6 +17,7 @@ $uname  = $_POST['uname'];
 $bname  = $_POST['bname'];
 $email  = $_POST['email'];
 $phone  = $_POST['phone'];
+$dob  = $_POST['dob'];
 $address  = $_POST['address'];
 $city  = $_POST['city'];
 $state  = $_POST['state'];
@@ -31,8 +32,8 @@ $pin = $_POST['pin'];
  
 //
 //$stmt = $conn->prepare("UPDATE users SET name=?, email=? WHERE id=?");
-$stmt = $conn->prepare("UPDATE users SET first_name = ?, last_name = ?, username = ?, business_name = ?, email = ?, phone = ?, address = ?, city = ?, state = ?, country = ?, pincode = ?  WHERE id = ?");
-$stmt->bind_param("sssssssssssi", $fname, $lname, $uname, $bname, $email, $phone, $address, $city, $state, $country, $pin, $id);
+$stmt = $conn->prepare("UPDATE users SET first_name = ?, last_name = ?, username = ?, business_name = ?, email = ?, phone = ?, address = ?, city = ?, state = ?, country = ?, pincode = ?, dob = ?  WHERE id = ?");
+$stmt->bind_param("ssssssssssssi", $fname, $lname, $uname, $bname, $email, $phone, $address, $city, $state, $country, $pin, $dob, $id);
 if ($stmt->execute()) {
     echo "<script>location.reload();</script>";
 } else {
