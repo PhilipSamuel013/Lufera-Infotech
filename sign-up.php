@@ -19,22 +19,35 @@
     </style>
     
 </head>
-
-<?php include './partials/head.php';
-      include './partials/connection.php';
-
-      $username = $email = $password = "";
+ 
+<?php
+    session_start();
+    include './partials/head.php';
+    include './partials/connection.php';
+      $username = $email = $password = $fname = $phone = "" ;
       $errors = [];
       $success = "";
-
+      
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = trim($_POST['username']);
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
-    
+        $fname = trim($_POST['fname']);
+        $phone = trim($_POST['phone']);
+        $created_at = date("Y-m-d H:i:s");
+        $lname = $business_name = $address = $city = $state = $country = $pincode = $dob = null;
+        $method = "1";
+        $role = "user";
+ 
         // Validation
         if (empty($username)) {
             $errors['username'] = "Username is required";
+        }
+        if (empty($fname)) {
+            $errors['fname'] = "Name is required";
+        }
+        if (empty($phone)) {
+            $errors['phone'] = "Phone no is required";
         }
     
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -58,23 +71,20 @@
         }
         // Insert if no errors
         if (empty($errors)) {
-            // Generate new user_id
-            $result = $conn->query("SELECT user_id FROM users ORDER BY id DESC LIMIT 1");
-            $lastId = "LI000";
-            if ($result && $row = $result->fetch_assoc()) {
-                $lastId = $row['user_id'];
+            function generateUserId() {
+                $letters = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 3);
+                $numbers = substr(str_shuffle('0123456789'), 0, 3);
+                return $letters . $numbers;
             }
-    
-            $num = (int)substr($lastId, 2) + 1;
-            $newUserId = 'LI' . str_pad($num, 3, '0', STR_PAD_LEFT);
-    
-            // $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            $stmt = $conn->prepare("INSERT INTO users (user_id, username, email, password) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssss", $newUserId, $username, $email, $password);
+            
+            $newUserId = generateUserId();
+            
+            $stmt = $conn->prepare("INSERT INTO users (user_id, username, email, phone, password, first_name,last_name,business_name,address,city,state,country,pincode,dob,created_at,method,role ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssssssssssssss", $newUserId, $username, $email, $phone, $password, $fname, $lname, $business_name, $address, $city, $state, $country, $pincode, $dob, $created_at, $method, $role);
             
             if ($stmt->execute()) {
                 $success = "Registration successful!";
-                $username = $email = $password = ""; // clear inputs
+                $username = $email = $password = $fname = $phone = "" ; // clear inputs
             } else {
                 $errors['general'] = "Error while registering user.";
             }
@@ -82,11 +92,10 @@
             $stmt->close();
         }
     }
-    
 ?>
-
+ 
 <body>
-
+ 
     <section class="auth bg-base d-flex flex-wrap">
         <div class="auth-left d-lg-block d-none">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center sign-up-img">
@@ -104,22 +113,24 @@
                     <h4 class="mb-12">Sign Up</h4>
                     <p class="mb-32 text-secondary-light text-lg">Welcome back! Enter your details</p>
                 </div>
-
+ 
                 <?php if ($success): ?>
                     <p class="success"><?= $success ?></p>
                 <?php endif; ?>
-
+ 
                 <form method="post" action="" id="registerForm">
+                    
                     <div class="icon-field mb-16">
                         <span class="icon translate-middle-y">
-                            <iconify-icon icon="f7:person"></iconify-icon>
+                            <iconify-icon icon="mage:edit"></iconify-icon>
                         </span>
-                        <input type="text" class="form-control h-56-px bg-neutral-50 radius-12 <?= isset($errors['username']) ? 'error-border' : '' ?>" placeholder="Username" name="username" value="<?= htmlspecialchars($username) ?>">
-                        <?php if (isset($errors['username'])): ?>
-                            <div class="error"><?= $errors['username'] ?></div>
+                        <input type="text" class="form-control h-56-px bg-neutral-50 radius-12 <?= isset($errors['fname']) ? 'error-border' : '' ?>" placeholder="Name" name="fname" value="<?= htmlspecialchars($fname) ?>">
+                        <?php if (isset($errors['fname'])): ?>
+                            <div class="error"><?= $errors['fname'] ?></div>
                         <?php endif; ?>
-
+ 
                     </div>
+ 
                     <div class="icon-field mb-16">
                         <span class="icon translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
@@ -128,8 +139,31 @@
                         <?php if (isset($errors['email'])): ?>
                             <div class="error"><?= $errors['email'] ?></div>
                         <?php endif; ?>
-
+ 
                     </div>
+ 
+                    <div class="icon-field mb-16">
+                        <span class="icon translate-middle-y">
+                            <iconify-icon icon="f7:phone"></iconify-icon>
+                        </span>
+                        <input type="text" class="form-control h-56-px bg-neutral-50 radius-12 <?= isset($errors['phone']) ? 'error-border' : '' ?>" placeholder="Phone No" name="phone" value="<?= htmlspecialchars($phone) ?>">
+                        <?php if (isset($errors['phone'])): ?>
+                            <div class="error"><?= $errors['phone'] ?></div>
+                        <?php endif; ?>
+ 
+                    </div>
+                    
+                    <div class="icon-field mb-16">
+                        <span class="icon translate-middle-y">
+                            <iconify-icon icon="f7:person"></iconify-icon>
+                        </span>
+                        <input type="text" class="form-control h-56-px bg-neutral-50 radius-12 <?= isset($errors['username']) ? 'error-border' : '' ?>" placeholder="Username" name="username" value="<?= htmlspecialchars($username) ?>">
+                        <?php if (isset($errors['username'])): ?>
+                            <div class="error"><?= $errors['username'] ?></div>
+                        <?php endif; ?>
+ 
+                    </div>
+                    
                     <div class="mb-20">
                         <div class="position-relative ">
                             <div class="icon-field">
@@ -140,7 +174,7 @@
                                 <?php if (isset($errors['password'])): ?>
                                     <div class="error"><?= $errors['password'] ?></div>
                                 <?php endif; ?>
-
+ 
                             </div>
                             <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
                         </div>
@@ -152,20 +186,20 @@
                                 <input class="form-check-input border border-neutral-300 mt-4" type="checkbox" name="checkbox" id="condition" <?= isset($_POST['checkbox']) ? 'checked' : '' ?>>
                                 <label class="form-check-label text-sm" for="condition">
                                     By creating an account means you agree to the
-                                    <a href="javascript:void(0)" class="text-primary-600 fw-semibold">Terms & Conditions</a> and our
-                                    <a href="javascript:void(0)" class="text-primary-600 fw-semibold">Privacy Policy</a>
+                                    <a href="javascript:void(0)" class="text-warning-600 fw-semibold">Terms & Conditions</a> and our
+                                    <a href="javascript:void(0)" class="text-warning-600 fw-semibold">Privacy Policy</a>
                                 </label>
                             </div>
-
+ 
                         </div>
                     </div>
                     
                     <?php if (isset($errors['checkbox'])): ?>
                         <div class="error"><?= $errors['checkbox'] ?></div>
                     <?php endif; ?>
-
-                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"> Sign Up</button>
-
+ 
+                    <button type="submit" class="btn lufera-bg text-white text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"> Sign Up</button>
+ 
                     <div class="mt-32 center-border-horizontal text-center">
                         <span class="bg-base z-1 px-4">Or sign up with</span>
                     </div>
@@ -174,20 +208,22 @@
                             <iconify-icon icon="ic:baseline-facebook" class="text-primary-600 text-xl line-height-1"></iconify-icon>
                             Facebook
                         </button>
+                        
                         <button type="button" class="fw-semibold text-primary-light py-16 px-24 w-50 border radius-12 text-md d-flex align-items-center justify-content-center gap-12 line-height-1 bg-hover-primary-50">
                             <iconify-icon icon="logos:google-icon" class="text-primary-600 text-xl line-height-1"></iconify-icon>
                             Google
                         </button>
+                        
                     </div>
                     <div class="mt-32 text-center text-sm">
-                        <p class="mb-0">Already have an account? <a href="sign-in.php" class="text-primary-600 fw-semibold">Sign In</a></p>
+                        <p class="mb-0">Already have an account? <a href="sign-in.php" class="text-warning-600 fw-semibold">Sign In</a></p>
                     </div>
-
+ 
                 </form>
             </div>
         </div>
     </section>
-
+ 
     <?php $script = '<script>
                         // ================== Password Show Hide Js Start ==========
                         function initializePasswordToggle(toggleSelector) {
@@ -205,9 +241,9 @@
                         initializePasswordToggle(".toggle-password");
                         // ========================= Password Show Hide Js End ===========================
                     </script>';?>
-
+ 
     <?php include './partials/scripts.php' ?>
-
+ 
 </body>
-
+ 
 </html>
